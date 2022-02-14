@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <div id="app">
+    <h1>Eventos de teclado</h1>
+    <input type="text" placeholder="Ingrese cualquier letra" @keydown="EventoTeclado" onkeypress="soloLetras">  
+    Ha pulsado la tecla: {{keycode}}
+
+    </div>
+
+    <script>    
+        new Vue({
+            el:'#app',
+            data:{
+                keycode:'',
+                color:''
+            },
+            methods:{
+                EventoTeclado(event){
+                    this.keycode= event.keyCode     
+                },
+                SoloLetras(event){
+                    if ((event.keyCode != 32) && (event.keyCode < 65) || (event.keyCode > 90) && (event.keyCode < 97) || (event.keyCode > 122))
+                    event.return = 
+                    
+                    
+                }
+
+            }
+        });
+    </script>
+
+
+</body>
+</html>
